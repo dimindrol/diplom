@@ -1,0 +1,33 @@
+---
+- name: Download Zabbix repository package
+  get_url:
+    url: https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_7.0-2+ubuntu24.04_all.deb
+    dest: /tmp/zabbix-release.deb
+
+- name: Install Zabbix repository package
+  apt:
+    deb: /tmp/zabbix-release.deb
+    state: present
+
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install Zabbix Agent
+  apt:
+    name: zabbix-agent
+    state: present
+
+- name: Ensure Zabbix Agent is started and enabled
+  service:
+    name: zabbix-agent
+    state: started
+    enabled: yes
+
+- name: Configure Zabbix Agent
+  lineinfile:
+    path: /etc/zabbix/zabbix_agentd.conf
+    regexp: '^Server='
+    line: 'Server=zabbix-server.ru-central1.internal'
+  notify:
+    - Restart Zabbix Agent
