@@ -29,5 +29,6 @@ resource "yandex_compute_instance" "zabbix" {
 
   metadata = {
     ssh-keys  = "ubuntu:${file(var.public_key_path)}"
+    user-data = file("/home/pergunovdv/diplom_netology/Terraform/nginx_conf.yaml")
   }
 }

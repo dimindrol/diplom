@@ -1,6 +1,6 @@
 ---
 - name: Install Zabbix Agent on specific hosts
-  hosts: all
+  hosts: all:!server_zabbix
   become: yes
   roles:
     - zabbix-agent

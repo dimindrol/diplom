@@ -1,0 +1,61 @@
+---
+- name: Add Zabbix repository
+  get_url:
+    url: https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_7.0-2+ubuntu24.04_all.deb
+    dest: /tmp/zabbix-release.deb
+
+- name: Install Zabbix repository package
+  apt:
+    deb: /tmp/zabbix-release.deb
+    state: present
+
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install Zabbix Server and Frontend
+  apt:
+    name:
+      - mysql-server
+      - zabbix-server-mysql
+      - zabbix-frontend-php
+      - zabbix-sql-scripts
+      - zabbix-nginx-conf
+      - zabbix-agent
+    state: present
+
+- name: Copy MySQL setup script to server
+  copy:
+    src: files/mysql_install.sh
+    dest: /tmp/mysql_install.sh
+    mode: '0755'
+
+- name: Configure Mysql DB
+  shell: "/tmp/mysql_install.sh"
+
+- name: Configure Zabbix Server
+  template:
+    src: zabbix_server.conf.j2
+    dest: /etc/zabbix/zabbix_server.conf
+  notify: 
+    - Restart Zabbix Server
+
+- name: Configure Frontend NGINX
+  template:
+    src: nginx.conf.j2
+    dest: /etc/zabbix/nginx.conf
+  notify: 
+    - Restart Nginx
+
+- name: Ensure Zabbix Server is started and enabled
+  service:
+    name: zabbix-server
+    state: started
+    enabled: yes
+
+- name: Ensure Nginx is started and enabled
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+
