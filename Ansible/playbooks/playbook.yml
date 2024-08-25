@@ -1,0 +1,12 @@
+---
+- name: Install Zabbix Server
+  hosts: server_zabbix
+  become: yes
+  roles:
+    - zabbix-server
+    
+- name: Install Zabbix Agent on specific hosts
+  hosts: all:!server_zabbix
+  become: yes
+  roles:
+    - zabbix-agent
