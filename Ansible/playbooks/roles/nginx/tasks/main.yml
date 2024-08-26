@@ -1,0 +1,11 @@
+- name: Copy index.html
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+
+- name: Copy styles.css
+  template:
+    src: styles.css.j2
+    dest: /var/www/html/styles.css
+  notify: 
+    - Restart nginx
