@@ -3,3 +3,8 @@
   service:
     name: nginx
     state: restarted
+
+- name: Restart filebeat
+  service:
+    name: filebeat
+    state: restarted

@@ -47,15 +47,15 @@
   notify: 
     - Restart Nginx
 
-- name: Ensure Zabbix Server is started and enabled
-  service:
-    name: zabbix-server
-    state: started
-    enabled: yes
+# - name: Ensure Zabbix Server is started and enabled
+#   service:
+#     name: zabbix-server
+#     state: started
+#     enabled: yes
 
-- name: Ensure Nginx is started and enabled
-  service:
-    name: nginx
-    state: started
-    enabled: yes
+# - name: Ensure Nginx is started and enabled
+#   service:
+#     name: nginx
+#     state: started
+#     enabled: yes
 

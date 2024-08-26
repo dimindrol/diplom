@@ -9,3 +9,21 @@
     dest: /var/www/html/styles.css
   notify: 
     - Restart nginx
+
+- name: Add repository Elastic
+  apt_repository:
+    repo: 'deb [trusted=yes] https://mirror.yandex.ru/mirrors/elastic/7/ stable main'
+    state: present
+
+- name: Install filebeat
+  apt:
+    name: filebeat
+    state: present
+
+- name: Copy configuration filebeat
+  template:
+    src: filebeat.yml.j2
+    dest: /etc/filebeat/filebeat.yml
+    mode: '0644'
+  notify: 
+    - Restart filebeat

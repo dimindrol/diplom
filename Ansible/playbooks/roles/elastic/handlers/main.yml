@@ -1,0 +1,10 @@
+---
+# - name: Restart logstash
+#   service:
+#     name: logstash
+#     state: restarted
+
+- name: Restart elasticsearch
+  service:
+    name: elasticsearch
+    state: restarted

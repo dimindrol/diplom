@@ -1,0 +1,18 @@
+---
+- name: Add repository Elastic
+  apt_repository:
+    repo: 'deb [trusted=yes] https://mirror.yandex.ru/mirrors/elastic/7/ stable main'
+    state: present
+
+- name: Install Kibana
+  apt:
+    name: kibana
+    state: present
+
+- name: Copy configuration file Kibana
+  template:
+    src: kibana.yml.j2
+    dest: /etc/kibana/kibana.yml
+    mode: '0644'
+  notify: 
+    - Restart kibana

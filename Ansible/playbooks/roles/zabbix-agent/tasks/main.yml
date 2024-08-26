@@ -18,11 +18,11 @@
     name: zabbix-agent
     state: present
 
-- name: Ensure Zabbix Agent is started and enabled
-  service:
-    name: zabbix-agent
-    state: started
-    enabled: yes
+# - name: Ensure Zabbix Agent is started and enabled
+#   service:
+#     name: zabbix-agent
+#     state: started
+#     enabled: yes
 
 - name: Configure Zabbix Agent
   lineinfile:

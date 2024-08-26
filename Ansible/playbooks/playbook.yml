@@ -16,3 +16,15 @@
   become: yes
   roles:
     - zabbix-agent
+
+- name: Setup server_elastic
+  hosts: server_elastic
+  become: yes
+  roles:
+    - elastic
+
+- name: Setup server_kibana
+  hosts: server_kibana
+  become: yes
+  roles:
+    - kibana
