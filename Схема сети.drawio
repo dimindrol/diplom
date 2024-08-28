@@ -138,7 +138,7 @@
         <mxCell id="4EC-q-yZa5u9_5ThuzSj-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4EC-q-yZa5u9_5ThuzSj-47" target="4EC-q-yZa5u9_5ThuzSj-14">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="4EC-q-yZa5u9_5ThuzSj-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4EC-q-yZa5u9_5ThuzSj-47" target="4EC-q-yZa5u9_5ThuzSj-41">
+        <mxCell id="4EC-q-yZa5u9_5ThuzSj-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;endArrow=none;endFill=0;" edge="1" parent="1" source="4EC-q-yZa5u9_5ThuzSj-47" target="4EC-q-yZa5u9_5ThuzSj-41">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="4EC-q-yZa5u9_5ThuzSj-47" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.nsx_edge_and_load_balancer;" vertex="1" parent="1">
@@ -151,7 +151,7 @@
           <mxGeometry x="660" y="190" as="geometry" />
         </mxCell>
         <mxCell id="4EC-q-yZa5u9_5ThuzSj-53" value="PORT:80" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="600" y="110" as="geometry" />
+          <mxGeometry x="600" y="100" as="geometry" />
         </mxCell>
         <mxCell id="4EC-q-yZa5u9_5ThuzSj-54" value="PORT:22" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1">
           <mxGeometry x="310" y="290" as="geometry">
