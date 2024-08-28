@@ -18,12 +18,6 @@
     name: zabbix-agent
     state: present
 
-# - name: Ensure Zabbix Agent is started and enabled
-#   service:
-#     name: zabbix-agent
-#     state: started
-#     enabled: yes
-
 - name: Configure Zabbix Agent
   lineinfile:
     path: /etc/zabbix/zabbix_agentd.conf

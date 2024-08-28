@@ -21,6 +21,7 @@ resource "yandex_compute_instance" "zabbix" {
   network_interface {
     subnet_id = yandex_vpc_subnet.public_services_subnet.id
     nat       = true
+    security_group_ids = [yandex_vpc_security_group.zabbix-sg.id]
   }
 
   scheduling_policy {

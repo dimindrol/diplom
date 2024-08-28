@@ -21,6 +21,7 @@ resource "yandex_compute_instance" "elastic" {
   network_interface {
     subnet_id = yandex_vpc_subnet.elasticsearch_subnet.id
     nat       = false
+    security_group_ids = [yandex_vpc_security_group.elastic-sg.id]
   }
 
   scheduling_policy {
@@ -56,6 +57,7 @@ resource "yandex_compute_instance" "kibana" {
   network_interface {
     subnet_id = yandex_vpc_subnet.public_services_subnet.id
     nat       = true
+    security_group_ids = [yandex_vpc_security_group.kibana-sg.id]
   }
 
   scheduling_policy {

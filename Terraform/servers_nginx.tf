@@ -3,12 +3,12 @@ resource "yandex_compute_instance" "nginx_servers" {
   count        = 2
   name         = "nginx-server-${count.index + 1}"
   hostname     = "nginx-server-${count.index + 1}.ru-central1.internal"
-  platform_id  = "standard-v3"
+  platform_id  = "standard-v2"
   allow_stopping_for_update = true
   resources {
     cores         = 2
-    core_fraction = 20
-    memory        = 2
+    core_fraction = 5
+    memory        = 0.5
   }
   boot_disk {
     initialize_params {
@@ -17,10 +17,8 @@ resource "yandex_compute_instance" "nginx_servers" {
     }
   }
   network_interface {
-  subnet_id = [
-  yandex_vpc_subnet.web_subnet_a.id,
-  yandex_vpc_subnet.web_subnet_b.id
-  ][count.index]
+  subnet_id = [yandex_vpc_subnet.web_subnet_a.id, yandex_vpc_subnet.web_subnet_b.id][count.index]
+  security_group_ids = [yandex_vpc_security_group.web-nginx-sg.id]
     nat       = false
   }
   scheduling_policy {

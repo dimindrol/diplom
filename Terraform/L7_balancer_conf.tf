@@ -52,9 +52,7 @@ resource "yandex_alb_virtual_host" "nginx_virtual_host" {
       }
     }
   }
-#   route_options {
-#     security_profile_id   = "<идентификатор_профиля_безопасности>"
-#   }
+
 }
 
 
@@ -66,6 +64,7 @@ resource "yandex_alb_load_balancer" "l7-balancer" {
     location {
       zone_id   = var.zone
       subnet_id = yandex_vpc_subnet.public_subnet.id
+      
     }
   }
 
@@ -85,13 +84,4 @@ resource "yandex_alb_load_balancer" "l7-balancer" {
     }
   }
 
-#   log_options {
-#     log_group_id = "<идентификатор_лог-группы>"
-#     discard_rule {
-#       http_codes          = ["<HTTP-код>"]
-#       http_code_intervals = ["<класс_HTTP-кодов>"]
-#       grpc_codes          = ["<gRPC-код>"]
-#       discard_percent     = <доля_отбрасываемых_логов>
-#     }
-#   }
 }
