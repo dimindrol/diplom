@@ -5,3 +5,4 @@ Terraform/terraform.tfstate
 Terraform/terraform.tfstate.backup
 Terraform/Musor
 Ansible/playbooks/*.retry
+Ansible/terraform.tfstate

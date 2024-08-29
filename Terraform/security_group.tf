@@ -30,11 +30,11 @@ resource "yandex_vpc_security_group" "bastion-sg" {
     port           = 22
   }
 
-  egress {
-    description    = "Permit ANY"
-    protocol       = "ANY"
-    v4_cidr_blocks = ["0.0.0.0/0"]
-  }
+  # egress {
+  #   description    = "Permit ANY"
+  #   protocol       = "ANY"
+  #   v4_cidr_blocks = ["0.0.0.0/0"]
+  # }
 }
 
 resource "yandex_vpc_security_group" "web-nginx-sg" {
@@ -127,21 +127,7 @@ resource "yandex_vpc_security_group" "elastic-sg" {
     description    = "Allow Elasticsearch"
     protocol       = "TCP"
     port           = 9200
-    v4_cidr_blocks = ["10.0.1.16/28"]
-  }
-
-  ingress {
-    description    = "Allow web_subnet_a"
-    protocol       = "TCP"
-    port           = 9200
-    v4_cidr_blocks = ["10.0.2.0/28"]
-  }
-
-  ingress {
-    description    = "Allow web_subnet_b"
-    protocol       = "TCP"
-    port           = 9200
-    v4_cidr_blocks = ["10.0.2.16/28"]
+    v4_cidr_blocks = ["10.0.1.16/28", "10.0.2.0/28", "10.0.2.16/28"]
   }
 
   egress {
