@@ -20,13 +20,7 @@ resource "yandex_vpc_security_group" "bastion-sg" {
   egress {
     description    = "Allow SSH to Servers"
     protocol       = "TCP"
-    v4_cidr_blocks = [
-      "10.0.1.0/28", 
-      "10.0.1.16/28", 
-      "10.0.2.0/28", 
-      "10.0.2.16/28", 
-      "10.0.2.32/28"
-    ]
+    v4_cidr_blocks = ["0.0.0.0/0"]
     port           = 22
   }
 

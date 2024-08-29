@@ -1,0 +1,17 @@
+---
+- name: Copy local zabbix_agent packages
+  synchronize:
+    src: files/zabbix-packages
+    dest: /tmp
+    mode: push
+
+- name: Install Zabbix repository package
+  shell: dpkg -i /tmp/zabbix-packages/*.deb
+
+- name: Configure Zabbix Agent
+  lineinfile:
+    path: /etc/zabbix/zabbix_agentd.conf
+    regexp: '^Server='
+    line: 'Server=zabbix-server.ru-central1.internal'
+  notify:
+    - Restart Zabbix Agent
