@@ -8,7 +8,7 @@ resource "yandex_compute_instance" "nginx_servers" {
   resources {
     cores         = 2
     core_fraction = 5
-    memory        = 0.5
+    memory        = 1
   }
   boot_disk {
     initialize_params {

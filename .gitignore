@@ -4,4 +4,4 @@ Terraform/.terraform.tfstate.lock.info
 Terraform/terraform.tfstate
 Terraform/terraform.tfstate.backup
 Terraform/Musor
-
+Ansible/playbooks/*.retry

@@ -14,7 +14,7 @@ resource "yandex_vpc_security_group" "bastion-sg" {
     description    = "Allow Zabbix-server"
     protocol       = "TCP"
     v4_cidr_blocks = ["10.0.1.16/28"]
-    port           = 22
+    port           = 10050
   }
 
   egress {
@@ -53,7 +53,7 @@ resource "yandex_vpc_security_group" "web-nginx-sg" {
     description    = "Allow Zabbix-server"
     protocol       = "TCP"
     v4_cidr_blocks = ["10.0.1.16/28"]
-    port           = 22
+    port           = 10050
   }
 
   ingress {
@@ -120,21 +120,28 @@ resource "yandex_vpc_security_group" "elastic-sg" {
     description    = "Allow Zabbix-server"
     protocol       = "TCP"
     v4_cidr_blocks = ["10.0.1.16/28"]
-    port           = 22
+    port           = 10050
   }
 
   ingress {
     description    = "Allow Elasticsearch"
     protocol       = "TCP"
     port           = 9200
-    v4_cidr_blocks = ["0.0.0.0/0"]
+    v4_cidr_blocks = ["10.0.1.16/28"]
   }
 
   ingress {
-    description    = "Allow Filebeat"
+    description    = "Allow web_subnet_a"
     protocol       = "TCP"
-    port           = 5044
-    v4_cidr_blocks = ["0.0.0.0/0"]
+    port           = 9200
+    v4_cidr_blocks = ["10.0.2.0/28"]
+  }
+
+  ingress {
+    description    = "Allow web_subnet_b"
+    protocol       = "TCP"
+    port           = 9200
+    v4_cidr_blocks = ["10.0.2.16/28"]
   }
 
   egress {
@@ -161,20 +168,13 @@ resource "yandex_vpc_security_group" "kibana-sg" {
     description    = "Allow Zabbix-server"
     protocol       = "TCP"
     v4_cidr_blocks = ["10.0.1.16/28"]
-    port           = 22
+    port           = 10050
   }
 
   ingress {
     description    = "Allow kibana"
     protocol       = "TCP"
     port           = 5601
-    v4_cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description    = "Allow Filebeat"
-    protocol       = "TCP"
-    port           = 5044
     v4_cidr_blocks = ["0.0.0.0/0"]
   }
 
