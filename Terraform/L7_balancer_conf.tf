@@ -25,10 +25,10 @@ resource "yandex_alb_backend_group" "nginx-backend-group" {
       panic_threshold      = 90
     }    
     healthcheck {
-      timeout              = "10s"
-      interval             = "2s"
-      healthy_threshold    = 10
-      unhealthy_threshold  = 15 
+      timeout              = "5s"
+      interval             = "5s"
+      healthy_threshold    = 5
+      unhealthy_threshold  = 5
       http_healthcheck {
         path               = "/"
       }

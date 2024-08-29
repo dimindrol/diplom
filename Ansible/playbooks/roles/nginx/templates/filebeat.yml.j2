@@ -6,7 +6,7 @@ filebeat.inputs:
   fields:
     type: nginx_access
   fields_under_root: true
-  scan_frequency: 5s
+  scan_frequency: 2m
 
 - type: log
   enabled: true
@@ -15,7 +15,7 @@ filebeat.inputs:
   fields:
     type: nginx_error
   fields_under_root: true
-  scan_frequency: 5s
+  scan_frequency: 30s
 
 
 output.elasticsearch:
