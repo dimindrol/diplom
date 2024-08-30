@@ -24,11 +24,6 @@ resource "yandex_vpc_security_group" "bastion-sg" {
     port           = 22
   }
 
-  # egress {
-  #   description    = "Permit ANY"
-  #   protocol       = "ANY"
-  #   v4_cidr_blocks = ["0.0.0.0/0"]
-  # }
 }
 
 resource "yandex_vpc_security_group" "web-nginx-sg" {
