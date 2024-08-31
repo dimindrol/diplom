@@ -1,10 +1,10 @@
 ---
-- name: Restart Zabbix Server
+- name: Перезапуск zabbix-server
   service:
     name: zabbix-server
     state: restarted
 
-- name: Restart Nginx
+- name: Перезапуск Nginx
   service:
     name: nginx
     state: restarted

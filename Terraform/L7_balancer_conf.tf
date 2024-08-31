@@ -1,3 +1,4 @@
+# Создание target_group
 resource "yandex_alb_target_group" "nginx-target-group" {
   name           = "nginx-target-group"
 
@@ -13,6 +14,7 @@ resource "yandex_alb_target_group" "nginx-target-group" {
 
 }
 
+# Создание backend_group
 resource "yandex_alb_backend_group" "nginx-backend-group" {
     name                     = "nginx-backend-group"
 
@@ -55,7 +57,7 @@ resource "yandex_alb_virtual_host" "nginx_virtual_host" {
 
 }
 
-
+# Создание alb_load_balancer
 resource "yandex_alb_load_balancer" "l7-balancer" {
   name        = "l7-balancer"
   network_id  = yandex_vpc_network.my_vpc.id

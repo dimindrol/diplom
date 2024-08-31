@@ -1,10 +1,10 @@
 ---
-- name: Restart nginx
+- name: Перезапуск nginx
   service:
     name: nginx
     state: restarted
 
-- name: Restart filebeat
+- name: Перезапуск filebeat
   service:
     name: filebeat
     state: restarted

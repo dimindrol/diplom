@@ -1,3 +1,4 @@
+#Создание nat-gateway
 resource "yandex_vpc_gateway" "nat-gateway" {
   name = "nat-gateway"
   shared_egress_gateway {}

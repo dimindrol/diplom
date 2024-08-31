@@ -1,5 +1,5 @@
 ---
-- name: Nginx configuration
+- name: Конфигурирование Nginx
   hosts: servers_nginx
   become: yes
   roles:

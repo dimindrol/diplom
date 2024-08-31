@@ -1,3 +1,4 @@
+#Данные для авторизации через yandex_cloud
 terraform {
   required_providers {
     yandex = {

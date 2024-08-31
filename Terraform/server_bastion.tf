@@ -1,4 +1,4 @@
-# bastion сервер
+# Ресурсы для сервера bastion-server
 resource "yandex_compute_instance" "bastion" {
   name         = "bastion-server"
   hostname     = "bastion-server.ru-central1.internal"

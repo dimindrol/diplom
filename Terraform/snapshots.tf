@@ -1,5 +1,6 @@
-resource "yandex_compute_snapshot_schedule" "VM-Snapshots" {
-  name = "VM-Snapshots"
+# Ресурсы для создания snapshot 
+resource "yandex_compute_snapshot_schedule" "vm_snapshots" {
+  name = "vm-snapshots"
 
   schedule_policy {
     expression = "0 0 ? * *"

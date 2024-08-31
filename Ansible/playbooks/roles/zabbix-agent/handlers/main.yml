@@ -1,5 +1,5 @@
 ---
-- name: Restart Zabbix Agent
+- name: Перезапуск Zabbix Agent
   service:
     name: zabbix-agent
     state: restarted

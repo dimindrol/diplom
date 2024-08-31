@@ -1,4 +1,4 @@
-# elastic сервер
+# Ресурсы для сервера elastic-server
 resource "yandex_compute_instance" "elastic" {
   name         = "elastic-server"
   hostname     = "elastic-server.ru-central1.internal"
@@ -34,17 +34,17 @@ resource "yandex_compute_instance" "elastic" {
 }
 
 
-# kibana сервер
+# Ресурсы для сервера kibana-server
 resource "yandex_compute_instance" "kibana" {
   name         = "kibana-server"
   hostname     = "kibana-server.ru-central1.internal"
-  platform_id  = "standard-v3"
+  platform_id  = "standard-v2"
   allow_stopping_for_update = true
 
   resources {
     cores  = 2
     memory = 4
-    core_fraction = 20
+    core_fraction = 5
   }
 
   boot_disk {

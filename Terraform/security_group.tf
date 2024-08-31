@@ -1,3 +1,4 @@
+# Группа безопасности для сервера server_bastion
 resource "yandex_vpc_security_group" "bastion-sg" {
   name        = "bastion-sg"
   description = "Security group for bastion server"
@@ -26,6 +27,7 @@ resource "yandex_vpc_security_group" "bastion-sg" {
 
 }
 
+# Группа безопасности для серверов servers_nginx
 resource "yandex_vpc_security_group" "web-nginx-sg" {
   name        = "web-nginx-sg"
   description = "Security group for web-nginx-servers"
@@ -48,14 +50,14 @@ resource "yandex_vpc_security_group" "web-nginx-sg" {
   ingress {
     description    = "Allow HTTP"
     protocol       = "TCP"
-    v4_cidr_blocks = ["10.0.1.0/28"]
+    v4_cidr_blocks = ["10.0.1.0/28","10.0.1.16/28"]
     port           = 80
   }
 
   ingress {
     description    = "Allow HTTPS"
     protocol       = "TCP"
-    v4_cidr_blocks = ["10.0.1.0/28"]
+    v4_cidr_blocks = ["10.0.1.0/28","10.0.1.16/28"]
     port           = 443
   }
 
@@ -66,6 +68,7 @@ resource "yandex_vpc_security_group" "web-nginx-sg" {
   }
 }
 
+# Группа безопасности для сервера server_zabbix
 resource "yandex_vpc_security_group" "zabbix-sg" {
   name        = "zabbix-sg"
   description = "Security group for zabbix-server"
@@ -93,6 +96,7 @@ resource "yandex_vpc_security_group" "zabbix-sg" {
 
 }
 
+# Группа безопасности для сервера server_elastic
 resource "yandex_vpc_security_group" "elastic-sg" {
   name        = "elastic-sg"
   description = "Security group for elastic"
@@ -127,6 +131,7 @@ resource "yandex_vpc_security_group" "elastic-sg" {
 
 }
 
+# Группа безопасности для сервера server_kibana
 resource "yandex_vpc_security_group" "kibana-sg" {
   name        = "kibana-sg"
   description = "Security group for kibana"

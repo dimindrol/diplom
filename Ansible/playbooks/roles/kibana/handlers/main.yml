@@ -1,5 +1,5 @@
 ---
-- name: Restart kibana
+- name: Перезапуск kibana
   service:
     name: kibana
     state: restarted

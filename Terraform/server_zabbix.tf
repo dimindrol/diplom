@@ -1,4 +1,4 @@
-# zabbix сервер
+# Ресурсы для сервера zabbix-server
 resource "yandex_compute_instance" "zabbix" {
   name         = "zabbix-server"
   hostname     = "zabbix-server.ru-central1.internal"

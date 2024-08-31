@@ -1,0 +1,7 @@
+zabbix-server.ru-central1.internal
+
+bastion-server.ru-central1.internal
+elastic-server.ru-central1.internal
+kibana-server.ru-central1.internal
+nginx-server-1.ru-central1.internal
+nginx-server-2.ru-central1.internal

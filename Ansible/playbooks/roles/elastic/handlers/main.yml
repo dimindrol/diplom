@@ -1,10 +1,5 @@
 ---
-# - name: Restart logstash
-#   service:
-#     name: logstash
-#     state: restarted
-
-- name: Restart elasticsearch
+- name: Перезапуск elasticsearch
   service:
     name: elasticsearch
     state: restarted
