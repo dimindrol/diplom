@@ -3,8 +3,10 @@
   service:
     name: zabbix-server
     state: restarted
+    enabled: yes
 
 - name: Перезапуск Nginx
   service:
     name: nginx
     state: restarted
+    enabled: yes
