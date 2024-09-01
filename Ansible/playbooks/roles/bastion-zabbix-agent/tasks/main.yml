@@ -8,10 +8,18 @@
 - name: Локальная установка zabbix-agent
   shell: dpkg -i /tmp/zabbix-packages/*.deb
 
-- name: Настройка конфигурации zabbix-agent
-  lineinfile:
-    path: /etc/zabbix/zabbix_agentd.conf
-    regexp: '^Server='
-    line: 'Server=zabbix-server.ru-central1.internal'
-  notify:
+- name: Конфигурирование zabbix-agent
+  template:
+    src: zabbix_agentd.conf
+    dest: /etc/zabbix/zabbix_agentd.conf
+  notify: 
     - Перезапуск zabbix-agent
+
+
+# - name: Настройка конфигурации zabbix-agent
+#   lineinfile:
+#     path: /etc/zabbix/zabbix_agentd.conf
+#     regexp: '^Server='
+#     line: 'Server=zabbix-server.ru-central1.internal'
+#   notify:
+#     - Перезапуск zabbix-agent

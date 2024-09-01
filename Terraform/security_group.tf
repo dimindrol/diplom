@@ -11,19 +11,20 @@ resource "yandex_vpc_security_group" "bastion-sg" {
     port           = 22
   }
 
-  ingress {
-    description    = "Allow Zabbix-server"
-    protocol       = "TCP"
-    v4_cidr_blocks = ["10.0.1.16/28"]
-    port           = 10050
-  }
-
   egress {
     description    = "Allow SSH to Servers"
     protocol       = "TCP"
     v4_cidr_blocks = ["0.0.0.0/0"]
     port           = 22
   }
+
+  egress {
+    description    = "Allow Zabbix-agent-Active"
+    protocol       = "TCP"
+    v4_cidr_blocks = ["10.0.1.16/28"]
+    port           = 10051
+  }
+
 
 }
 
@@ -86,6 +87,13 @@ resource "yandex_vpc_security_group" "zabbix-sg" {
     protocol       = "TCP"
     v4_cidr_blocks = ["0.0.0.0/0"]
     port           = 8080
+  }
+
+  ingress {
+    description    = "Allow Zabbix-agent-active"
+    protocol       = "TCP"
+    v4_cidr_blocks = ["10.0.1.0/28"]
+    port           = 10051
   }
 
   egress {
