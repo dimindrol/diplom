@@ -2,13 +2,13 @@
 resource "yandex_compute_instance" "elastic" {
   name         = "elastic-server"
   hostname     = "elastic-server.ru-central1.internal"
-  platform_id  = "standard-v3"
+  platform_id  = "standard-v2"
   allow_stopping_for_update = true
 
   resources {
     cores  = 2
-    memory = 6
-    core_fraction = 20
+    memory = 4
+    core_fraction = 5
   }
 
   boot_disk {
@@ -43,7 +43,7 @@ resource "yandex_compute_instance" "kibana" {
 
   resources {
     cores  = 2
-    memory = 4
+    memory = 2
     core_fraction = 5
   }
 
