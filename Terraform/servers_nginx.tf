@@ -1,4 +1,4 @@
-# # Ресурсы для создания двух web-серверов с Nginx в разных зонах
+# Ресурсы для создания двух web-серверов с Nginx в разных зонах
 resource "yandex_compute_instance" "nginx_servers" {
   count        = 2
   name         = "nginx-server-${count.index + 1}"
