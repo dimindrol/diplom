@@ -80,7 +80,7 @@ APP балансировщик: http://84.201.145.110/
 - [Конфигурация NAT (Terraform)](https://github.com/dimindrol/diplom_netology/blob/37595c95621cc41a8ca2fb636910ad734a4ab516/Terraform/nat_conf.tf)
 
 ### Резервное копирование:
-- [Конфигурация расписания резервного копирования (Terraform)](https://github.com/dimindrol/diplom_netology/blob/37595c95621cc41a8ca2fb636910ad734a4ab516/Terraform/snapshots.tf)
+- [Конфигурация расписания резервного копирования (Terraform)](https://github.com/dimindrol/diplom_netology/blob/37595c95621cc41a8ca2fb636910ad734a4ab516/Terraform/snapshots.tf)  
 Настроено расписание для автоматического создания vm-snapshots
 ![image](https://github.com/user-attachments/assets/84c29b0f-5dcc-4111-ac0f-adc1fb1f26da)
 
