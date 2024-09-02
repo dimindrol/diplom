@@ -40,8 +40,7 @@ APP балансировщик: http://84.201.145.110/
 - [Конфигурация Zabbix Agent (Ansible)](https://github.com/dimindrol/diplom_netology/tree/37595c95621cc41a8ca2fb636910ad734a4ab516/Ansible/playbooks/roles/zabbix-agent)
 
 Установка Zabbix Agent на Bastion сервер осуществляется локально, так как разрешен только трафик на порт 22(Работает в активном режиме):
-- [Конфигурация Zabbix Agent на Bastion сервере (Ansible)](https://github.com/dimindrol/diplom_netology/tree/37595c95621cc41a8ca2fb636910ad734a4ab516/Ansible/playbooks/roles/bastion-zabbix-agent)
-![image](https://github.com/user-attachments/assets/935f0bdb-327e-4a25-ac5c-797abc88be9b)
+- [Конфигурация Zabbix Agent на Bastion сервере (Ansible)](https://github.com/dimindrol/diplom_netology/tree/aa041b86e4dfb2c216494eefb9eb671d5f3adcd0/Ansible/playbooks/roles/bastion-zabbix-agent)
 
 Настроены дешборды для отображения метрик:
 ![image](https://github.com/user-attachments/assets/44f80e25-cec1-4cdf-aa6b-3cf85a33c899)  
