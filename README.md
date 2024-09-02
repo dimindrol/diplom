@@ -69,7 +69,7 @@ APP балансировщик: http://84.201.145.110/
 - [Конфигурация сети (Terraform)](https://github.com/dimindrol/diplom_netology/blob/37595c95621cc41a8ca2fb636910ad734a4ab516/Terraform/network_conf.tf)
 
 Настроены Security Groups для серверов, разрешающие входящий трафик только на необходимые порты:
-- [Конфигурация Security Groups (Terraform)](https://github.com/dimindrol/diplom_netology/blob/37595c95621cc41a8ca2fb636910ad734a4ab516/Terraform/security_group.tf)
+- [Конфигурация Security Groups (Terraform)](https://github.com/dimindrol/diplom_netology/blob/3bf5bb6fc63af43be03726e5a6e61b088107ed93/Terraform/security_group.tf)
 
 Создан и настроен Bastion сервер. В Ansible применяется ProxyCommand для маршрутизации трафика через этот сервер:
 - [Конфигурация Bastion сервера (Terraform)](https://github.com/dimindrol/diplom_netology/blob/37595c95621cc41a8ca2fb636910ad734a4ab516/Terraform/server_bastion.tf)
