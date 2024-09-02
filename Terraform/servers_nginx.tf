@@ -22,7 +22,7 @@ resource "yandex_compute_instance" "nginx_servers" {
     nat       = false
   }
   scheduling_policy {
-    preemptible = true
+    preemptible = false
   }
 
   metadata = {

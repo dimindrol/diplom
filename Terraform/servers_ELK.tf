@@ -25,7 +25,7 @@ resource "yandex_compute_instance" "elastic" {
   }
 
   scheduling_policy {
-    preemptible = true
+    preemptible = false
   }
 
   metadata = {

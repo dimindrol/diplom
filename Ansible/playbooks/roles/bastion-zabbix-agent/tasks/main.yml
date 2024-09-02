@@ -15,11 +15,3 @@
   notify: 
     - Перезапуск zabbix-agent
 
-
-# - name: Настройка конфигурации zabbix-agent
-#   lineinfile:
-#     path: /etc/zabbix/zabbix_agentd.conf
-#     regexp: '^Server='
-#     line: 'Server=zabbix-server.ru-central1.internal'
-#   notify:
-#     - Перезапуск zabbix-agent
